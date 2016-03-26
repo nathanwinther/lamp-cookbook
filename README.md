@@ -2,6 +2,17 @@
 
 Chef LAMP cookbook for Vagrant development
 
+## PHP modules
+
+````
+php5-apcu
+php5-curl
+php5-gd
+php5-mcrypt
+php5-xmlrpc
+php5-xsl
+````
+
 ## Dependent cookbooks
 
 ````
