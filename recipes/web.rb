@@ -8,8 +8,8 @@
 httpd_service 'site' do
   listen_ports node['lamp']['web_listen_ports']
   mpm 'prefork'
-  run_user node['lamp']['web_run_user']
-  run_group node['lamp']['web_run_group']
+  run_user node['lamp']['webadmin']
+  run_group node['lamp']['webadmin']
   action [:create, :start]
 end
 

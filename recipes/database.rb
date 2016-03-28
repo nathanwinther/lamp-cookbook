@@ -19,3 +19,12 @@ mysql_service 'site' do
   action [:create, :start]
 end
 
+# MySQL configuration
+mysql_config 'site' do
+  instance 'site'
+  config_name 'extra'
+  source 'extra.cnf.erb'
+  action :create
+  notifies :restart, 'mysql_service[site]'
+end
+

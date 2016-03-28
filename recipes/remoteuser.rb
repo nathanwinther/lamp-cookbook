@@ -21,7 +21,7 @@ mysql_database_user 'root' do
 end
 
 # Run once
-directory '/var/chef/do-not-remove' do
+directory node['lamp']['run_once'] do
   owner 'root'
   group 'root'
   mode '0755'
@@ -29,7 +29,7 @@ directory '/var/chef/do-not-remove' do
   only_if { node['lamp']['remoteuser'] }
 end
 
-file '/var/chef/do-not-remove/remote-root-user' do
+file node['lamp']['run_once'] + '/database-remote-root-user' do
   action :create_if_missing
   notifies :query, 'mysql_database[remote_root_user]', :immediately
   notifies :query, 'mysql_database[flush_privileges]', :immediately

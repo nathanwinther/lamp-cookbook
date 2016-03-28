@@ -6,6 +6,7 @@
 
 include_recipe 'apt::default'
 include_recipe 'lamp::firewall'
+include_recipe 'lamp::webadmin'
 include_recipe 'lamp::web'
 include_recipe 'lamp::database'
 include_recipe 'lamp::remoteuser'

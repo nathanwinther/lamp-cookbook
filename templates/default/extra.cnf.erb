@@ -1,0 +1,6 @@
+<% node['lamp']['database_conf_vars'].each do |section, vars| %>
+[<%= section %>]
+<% vars.each do |k, v| %>
+<%= k %>=<%= v %>
+<% end %>
+<% end %>
