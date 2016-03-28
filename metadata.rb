@@ -4,7 +4,7 @@ maintainer_email 'nwinther@taunton.com'
 license 'all_rights'
 description 'Installs/Configures lamp'
 long_description 'Installs/Configures lamp'
-version '0.1.0'
+version '0.1.1'
 
 depends 'apt', '~> 3.0.0'
 depends 'firewall', '~> 2.5.0'
