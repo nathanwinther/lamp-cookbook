@@ -1,18 +1,20 @@
 default['firewall']['allow_ssh'] = true
 
-default['lamp']['firewall_open_ports'] = [80, 443, 3306]
+default['lamp']['run_once']['directory'] = '/var/chef/run_once'
 
-default['lamp']['web_listen_ports'] = ['80', '443']
-default['lamp']['webadmin'] = 'webadmin'
+default['lamp']['firewall']['ports'] = [80, 443, 3306]
 
-default['lamp']['database_root_pass'] = 'root'
-default['lamp']['database_conf_vars'] = {
+default['lamp']['webadmin']['user'] = 'webadmin'
+
+default['lamp']['web']['ports'] = ['80', '443']
+default['lamp']['web']['user'] = 'webadmin'
+default['lamp']['web']['group'] = 'webadmin'
+
+default['lamp']['database']['root_password'] = 'root'
+default['lamp']['database']['root_remote'] = true
+default['lamp']['database']['conf_vars'] = {
   'mysqld' => {
-    'max_allowed_packet' => '64M'
+    'max_allowed_packet' => '64M',
   }
 }
-
-default['lamp']['run_once'] = '/etc/do-not-remove'
-
-default['lamp']['remoteuser'] = true
 

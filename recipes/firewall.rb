@@ -6,7 +6,7 @@
 
 include_recipe 'firewall::default'
 
-ports = node.default['lamp']['firewall_open_ports']
+ports = node.default['lamp']['firewall']['ports']
 firewall_rule "open ports #{ports}" do
   port ports
 end

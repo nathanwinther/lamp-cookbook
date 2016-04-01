@@ -1,15 +1,14 @@
-#
-# Cookbook Name:: lamp
+# # Cookbook Name:: lamp
 # Recipe:: web
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 
 # Install Apache and start the service.
 httpd_service 'site' do
-  listen_ports node['lamp']['web_listen_ports']
+  listen_ports node['lamp']['web']['ports']
   mpm 'prefork'
-  run_user node['lamp']['webadmin']
-  run_group node['lamp']['webadmin']
+  run_user node['lamp']['web']['user']
+  run_group node['lamp']['web']['group']
   action [:create, :start]
 end
 
